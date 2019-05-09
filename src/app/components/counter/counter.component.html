@@ -1,0 +1,31 @@
+<div>
+  <input type="button"
+         [disabled]="decrementDisabled$ | async"
+         class="btn btn-sm btn-primary"
+         (click)="decrement()"
+         value="-">
+  <span class="offset-1">{{ count$ | async }}</span>
+  <input type="button"
+         class="btn btn-sm btn-primary offset-1"
+         (click)="increment()"
+         value="+">
+  <input type="button"
+         class='btn btn-danger offset-1'
+         (click)="reset()"
+         value="Reset" />
+</div>
+<div class="btn-group"
+     role="group">
+  <button type="button"
+          (click)="setCountBy(1)"
+          [disabled]="(by$ | async) === 1"
+          class="btn btn-secondary">By 1</button>
+  <button type="button"
+          (click)="setCountBy(3)"
+          [disabled]="(by$ | async) === 3"
+          class="btn btn-secondary">By 3</button>
+  <button type="button"
+          (click)="setCountBy(5)"
+          [disabled]="(by$ | async) === 5"
+          class="btn btn-secondary">By 5</button>
+</div>

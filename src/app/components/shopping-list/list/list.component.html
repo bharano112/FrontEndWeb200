@@ -1,0 +1,12 @@
+<h4>{{ heading }}</h4>
+<ul class="list-unstyled">
+  <li class="alert alert-success"
+      *ngFor="let item of shoppingItems">
+    <span [ngClass]="{purchased: item.purchased}">{{ item.description }} </span>
+    <input type="button"
+           *ngIf="!item.purchased"
+           class="btn btn-sm btn-danger"
+           (click)="markPurchased(item)"
+           value="X">
+  </li>
+</ul>

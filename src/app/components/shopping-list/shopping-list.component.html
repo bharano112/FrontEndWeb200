@@ -1,0 +1,30 @@
+<header class="page-header">
+  <h3>Your Shopping List</h3>
+</header>
+<div class="row">
+  <div class="col">
+    <!--
+      "(itemadded)" this is an @output/event that is emited by the entry.component
+      this event is handled by the shopping-list.component
+     -->
+    <app-entry (itemadded)="onItemAdded($event)"></app-entry>
+  </div>
+  <div class="col">
+    <!--
+       the shoppingItems is an input on the list.component
+      items is an array that lives on the parent shopping-list.component.
+      The square brackets indicate an input, also bind to this variable
+      leaving the square brackedts off says this is a literal
+    -->
+    <app-list heading="Stuff you should buy"
+              [shoppingItems]="items$ | async"></app-list>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <app-left></app-left>
+  </div>
+  <div class="col">
+    <app-right></app-right>
+  </div>
+</div>

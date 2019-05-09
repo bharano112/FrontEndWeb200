@@ -1,0 +1,10 @@
+<div class="form-group">
+  <h3>{{ msg }}</h3>
+  <input type="button"
+         (click)="getIt()"
+         class="btn btn-success"
+         value="Get It">
+</div>
+<div>
+  <h3>From the Observable: {{ msg$ | async }}</h3>
+</div>
