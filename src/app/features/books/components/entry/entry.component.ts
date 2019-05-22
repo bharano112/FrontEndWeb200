@@ -18,7 +18,7 @@ export class EntryComponent implements OnInit {
   constructor(private store: Store<State>) { }
 
   ngOnInit() {
-    this.model = new BookItem('', '', '', 'Hardcover');
+    this.model = new BookItem('', '', '', false, 'Hardcover');
   }
 
   add() {

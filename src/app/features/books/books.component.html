@@ -2,10 +2,12 @@
   <div class="col">
     <app-entry></app-entry>
   </div>
-  <div class="col">
-    <app-list [books]="items$ | async"></app-list>
-  </div>
 </div>
 <div class="row">
-  <h1>Loaned Out</h1>
+  <div class="col-md-6">
+    <app-list [books]="items$ | async"></app-list>
+  </div>
+  <div class="col-md-6">
+    <app-onloan [loaned]="itemsloaned$| async"></app-onloan>
+  </div>
 </div>

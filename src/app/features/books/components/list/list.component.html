@@ -2,8 +2,17 @@
 <ul class="list-unstyled">
   <li class="alert alert-info"
       *ngFor="let book of books">
-    <span>Title: </span>{{book.title}} <br>
-    <span>Author: </span>{{book.author}}<br>
-    <span>Format: </span>{{book.format}}
+    <div *ngIf="book.onLoan === false">
+      <span>Title: </span>{{book.title}} <br>
+      <span>Author: </span>{{book.author}}<br>
+      <span>Format: </span>{{book.format}}<br>
+      <div style="text-align: center">
+        <input name="loanButton"
+               type="button"
+               class="btn btn-primary"
+               value="Loan Out"
+               (click)="loan(book)" />
+      </div>
+    </div>
   </li>
 </ul>

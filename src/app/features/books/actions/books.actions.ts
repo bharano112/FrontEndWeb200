@@ -9,14 +9,33 @@ export class AddedBook implements Action {
   title: string;
   author: string;
   format: string;
+  onLoan: boolean;
 
   constructor(public titleIn: string, author: string, format: string) {
     this.id = 'T' + (maxId++).toString();
     this.title = titleIn;
     this.author = author;
     this.format = format;
+    this.onLoan = false;
   }
 }
 
-export type ALL =
-  AddedBook;
+export const LOAN_BOOK = '[books] book loaned';
+export class LoanBook implements Action {
+  readonly type = LOAN_BOOK;
+  id: string;
+  title: string;
+  author: string;
+  format: string;
+  onLoan: boolean;
+
+  constructor(public titleIn: string, author: string, format: string, id: string) {
+    this.id = id;
+    this.title = titleIn;
+    this.author = author;
+    this.format = format;
+    this.onLoan = true;
+  }
+}
+
+export type ALL = LoanBook | AddedBook;
